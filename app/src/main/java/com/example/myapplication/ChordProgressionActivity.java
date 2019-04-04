@@ -10,4 +10,6 @@ public class ChordProgressionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chord_progression);
     }
+
+    //test
 }
