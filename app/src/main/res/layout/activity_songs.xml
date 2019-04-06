@@ -73,17 +73,23 @@
             app:layout_constraintTop_toBottomOf="@+id/textView5"
             tools:ignore="HardcodedText" />
 
-        <ListView
-            android:id="@+id/songList"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvContacts"
             android:layout_width="match_parent"
-            android:layout_height="510dp" />
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/buttonhome"
-            android:layout_width="33dp"
-            android:layout_height="30dp"
-            android:background="@drawable/home" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonhome"
+        android:layout_width="33dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/home" />
 
 </RelativeLayout>

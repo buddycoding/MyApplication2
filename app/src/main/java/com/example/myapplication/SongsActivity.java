@@ -1,13 +1,13 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +15,7 @@ import java.util.List;
 public class SongsActivity extends AppCompatActivity {
 
     private Button button1;
+    ArrayList<Contact> contacts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +30,6 @@ public class SongsActivity extends AppCompatActivity {
             }
         });
 
-        ListView songList = findViewById(R.id.songList);
-
-        ArrayAdapter<String> songsArrayAdapter;
         List<String> songs = new ArrayList<>();
         songs.add("Can't Help Falling In Love");
         songs.add("2");
@@ -44,18 +42,19 @@ public class SongsActivity extends AppCompatActivity {
         songs.add("9");
         songs.add("10");
 
-        songsArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, songs );
-        songList.setAdapter(songsArrayAdapter);
+        // Lookup the recyclerview in activity layout
+        RecyclerView rvContacts = (RecyclerView) findViewById(R.id.rvContacts);
 
-        songList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Get the selected item text from ListView
-                String selectedItem = (String) parent.getItemAtPosition(position);
+        // Initialize contacts
+        contacts = Contact.createContactsList(100);
+        // Create adapter passing in the sample user data
+        ContactsAdapter adapter = new ContactsAdapter(contacts);
+        // Attach the adapter to the recyclerview to populate items
+        rvContacts.setAdapter(adapter);
+        // Set layout manager to position the items
+        rvContacts.setLayoutManager(new LinearLayoutManager(this));
+        // That's all!
 
-                openSongsActivity();
-            }
-        });
     }
     public void openMainActivity () {
         Intent intent = new Intent (this, MainActivity.class);
