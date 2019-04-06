@@ -55,6 +55,7 @@ public class SongsActivity extends AppCompatActivity {
         rvContacts.setLayoutManager(new LinearLayoutManager(this));
         // That's all!
 
+        
     }
     public void openMainActivity () {
         Intent intent = new Intent (this, MainActivity.class);
