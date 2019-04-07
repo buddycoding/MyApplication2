@@ -5,8 +5,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.example.myapplication.R;
+import com.example.myapplication.SongsActivity;
 
 import java.util.List;
 
@@ -15,12 +19,21 @@ public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.View
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView nameTextView;
         public TextView artistTextView;
+        public LinearLayout linearLayout;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(View itemView, final Context context) {
             super(itemView);
 
             nameTextView = itemView.findViewById(R.id.song_title);
             artistTextView = itemView.findViewById(R.id.song_artist);
+            linearLayout =  itemView.findViewById(R.id.ll_layout);
+
+            linearLayout.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View view) {
+                    ((SongsActivity) context).userItemClick(getAdapterPosition());
+                }
+            });
         }
     }
 
@@ -35,10 +48,13 @@ public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.View
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View contactView = inflater.inflate(R.layout.activity_song_chords_list, parent, false);
+        if (context != null) {
+            View songListView = inflater.inflate(R.layout.activity_song_chords_list, parent, false);
+            ViewHolder viewHolder = new ViewHolder(songListView, context);
+            return viewHolder;
+        }
 
-        ViewHolder viewHolder = new ViewHolder(contactView);
-        return viewHolder;
+        return null;
     }
 
     @Override

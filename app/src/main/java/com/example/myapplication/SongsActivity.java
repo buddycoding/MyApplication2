@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.myapplication.Adapters.SongsList;
 import com.example.myapplication.Adapters.SongsListAdapter;
@@ -33,28 +34,22 @@ public class SongsActivity extends AppCompatActivity {
             }
         });
 
-        //////////////////
-        // Lookup the recyclerview in activity layout
         RecyclerView rvContacts = findViewById(R.id.rvContacts);
-
-        // Create adapter passing in the sample user data
         SongsListAdapter adapter = new SongsListAdapter(songs);
-        // Attach the adapter to the recyclerview to populate items
         rvContacts.setAdapter(adapter);
-        // Set layout manager to position the items
         rvContacts.setLayoutManager(new LinearLayoutManager(this));
-        // That's all!
-
-
-
     }
     public void openMainActivity () {
         Intent intent = new Intent (this, MainActivity.class);
         startActivity(intent);
     }
 
-    public void openSongsActivity () {
+    public void userItemClick(int pos) {
+        Toast.makeText(this, "Clicked User : " + songs.get(pos).getName(), Toast.LENGTH_SHORT).show();
+
         Intent intent = new Intent (this, SongsChordsActivity.class);
+        intent.putExtra("SongName", songs.get(pos).getName());
+        intent.putExtra("ArtistName", songs.get(pos).getArtist());
         startActivity(intent);
     }
 }
