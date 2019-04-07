@@ -9,13 +9,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.myapplication.Adapters.SongsList;
+import com.example.myapplication.Adapters.SongsListAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class SongsActivity extends AppCompatActivity {
 
     private Button button1;
-    ArrayList<Contact> contacts;
+    ArrayList<SongsList> songs = SongsList.createSongList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,32 +33,20 @@ public class SongsActivity extends AppCompatActivity {
             }
         });
 
-        List<String> songs = new ArrayList<>();
-        songs.add("Can't Help Falling In Love");
-        songs.add("2");
-        songs.add("3");
-        songs.add("4");
-        songs.add("5");
-        songs.add("6");
-        songs.add("7");
-        songs.add("8");
-        songs.add("9");
-        songs.add("10");
-
+        //////////////////
         // Lookup the recyclerview in activity layout
-        RecyclerView rvContacts = (RecyclerView) findViewById(R.id.rvContacts);
+        RecyclerView rvContacts = findViewById(R.id.rvContacts);
 
-        // Initialize contacts
-        contacts = Contact.createContactsList(100);
         // Create adapter passing in the sample user data
-        ContactsAdapter adapter = new ContactsAdapter(contacts);
+        SongsListAdapter adapter = new SongsListAdapter(songs);
         // Attach the adapter to the recyclerview to populate items
         rvContacts.setAdapter(adapter);
         // Set layout manager to position the items
         rvContacts.setLayoutManager(new LinearLayoutManager(this));
         // That's all!
 
-        
+
+
     }
     public void openMainActivity () {
         Intent intent = new Intent (this, MainActivity.class);
