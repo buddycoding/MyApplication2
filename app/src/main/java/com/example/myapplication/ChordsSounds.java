@@ -57,7 +57,7 @@ public class ChordsSounds extends AppCompatActivity {
                     btnList.get(btnList.size()-1).setText("Play " + textChordName.toUpperCase() + "");
 
                     final String chordSoundName = chordsNameString.charAt(x) + "";
-                    final String filename = "android.resource://" + this.getPackageName() + "/raw/"+chordSoundName;
+                    final String filename = "android.resource://" + this.getPackageName() + "/raw/"+chordSoundName; //issue wrong file pointer for fixing
                     btnList.get(btnList.size()-1).setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
