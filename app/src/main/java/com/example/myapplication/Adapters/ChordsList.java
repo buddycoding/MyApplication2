@@ -38,7 +38,7 @@ public class ChordsList {
         chords.add(new ChordsList("emamg"));
         chords.add(new ChordsList("ae"));
         chords.add(new ChordsList("dmbmf"));
-        chords.add(new ChordsList("fmaj7fadd9"));
+        chords.add(new ChordsList("f7f9"));
         chords.add(new ChordsList("d7e7a7"));
 
 
