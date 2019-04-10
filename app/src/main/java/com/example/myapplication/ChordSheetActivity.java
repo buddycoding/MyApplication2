@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -46,8 +45,9 @@ public class ChordSheetActivity extends AppCompatActivity {
     public void userItemClick(int pos) {
 
         Toast.makeText(this, "Clicked User : " + chords.get(pos).getName(), Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, ChordsSounds.class);
+        Intent intent = new Intent(this, ChordsSoundsActivity.class);
         intent.putExtra("ChordsName", chords.get(pos).getName());
+        intent.putExtra("ChordsColor", chords.get(pos).getColor());
         startActivity(intent);
         /*
         Intent intent = new Intent (this, SongsChordsActivity.class);
