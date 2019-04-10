@@ -133,8 +133,7 @@ public class ChordsSoundsActivity extends AppCompatActivity {
         });
     }
 
-    private void setFileNamePost(String filename)
-    {
+    private void setFileNamePost(String filename){
         setFileName(btnList.size()-1, filename + btnList.get(btnList.size()-1).getText().toString().toLowerCase().replace("play ",""));
     }
 }
