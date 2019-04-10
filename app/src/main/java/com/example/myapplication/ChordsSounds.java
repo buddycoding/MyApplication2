@@ -73,7 +73,7 @@ public class ChordsSounds extends AppCompatActivity {
             }
         }
         lLayout.addView(newLL);
-        //test commit
+        //test commit 2
 
     }
 }
