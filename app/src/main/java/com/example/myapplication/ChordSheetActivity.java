@@ -16,7 +16,6 @@ import java.util.ArrayList;
 
 public class ChordSheetActivity extends AppCompatActivity {
 
-    private Button button1;
     ArrayList<ChordsList> chords = ChordsList.createChordList();
 
     @Override
@@ -24,13 +23,14 @@ public class ChordSheetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chord_sheet);
 
+        /*
         button1 = (Button) findViewById(R.id.buttonhome);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openMainActivity();
             }
-        });
+        });*/
 
         RecyclerView rvChords = findViewById(R.id.rvChords);
         ChordsListAdapter adapter = new ChordsListAdapter(chords);

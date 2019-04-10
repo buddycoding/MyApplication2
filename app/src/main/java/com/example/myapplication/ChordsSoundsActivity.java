@@ -34,6 +34,11 @@ public class ChordsSoundsActivity extends AppCompatActivity {
         int colorChords = myIntent.getIntExtra("ChordsColor",0);
 
         chordsName.setText(chordsNameString.toUpperCase().replaceAll(".(?!$)", "$0 "));
+        String chordsNameTV = chordsName.getText().toString();
+        chordsNameTV = chordsNameTV.replaceAll(" M", "m");
+        chordsNameTV = chordsNameTV.replaceAll(" 7", "7");
+        chordsNameTV = chordsNameTV.replaceAll(" 9", "9");
+        chordsName.setText(chordsNameTV);
 
         ImageView imageView =  findViewById(R.id.chords_sounds_image);
         imageView.setImageResource(this.getResources().getIdentifier(chordsNameString + "2", "drawable", this.getPackageName()));
