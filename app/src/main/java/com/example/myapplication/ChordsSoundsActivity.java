@@ -1,18 +1,14 @@
 package com.example.myapplication;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -21,7 +17,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChordsSounds extends AppCompatActivity {
+public class ChordsSoundsActivity extends AppCompatActivity {
 
     private MediaPlayer media;
     private List<Button> btnList;
@@ -35,6 +31,7 @@ public class ChordsSounds extends AppCompatActivity {
         TextView chordsName = findViewById(R.id.chordsNames);
 
         String chordsNameString = myIntent.getStringExtra("ChordsName");
+        int colorChords = myIntent.getIntExtra("ChordsColor",0);
 
         chordsName.setText(chordsNameString.toUpperCase().replaceAll(".(?!$)", "$0 "));
 
@@ -101,7 +98,17 @@ public class ChordsSounds extends AppCompatActivity {
 
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(-1, -2);
         newLL.setWeightSum(weightCount);
-        //newLL.setBackgroundColor(Color.BLUE);
+
+        if(colorChords == 0)
+        {
+            newLL.setBackgroundColor(Color.rgb(239,167,52));
+        }
+        else
+        {
+            newLL.setBackgroundColor(Color.rgb(207,52,52));
+        }
+
+        newLL.setPadding(0,0,0,40);
         newLL.setLayoutParams(lp);
 
         RelativeLayout.LayoutParams params= new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);

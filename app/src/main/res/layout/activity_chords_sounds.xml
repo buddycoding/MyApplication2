@@ -34,19 +34,28 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="HardcodedText" />
 
+        <ImageView
+            android:id="@+id/chord_image2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/key"
+            android:layout_below="@id/chordsNames"
+            />
+
         <LinearLayout
             android:id="@+id/ll_chordsNames2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_below="@id/chordsNames">
+            android:layout_below="@id/chord_image2">
 
-        <ImageView
-            android:id="@+id/chords_sounds_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="fitXY"
-            />
+            <ImageView
+                android:id="@+id/chords_sounds_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                />
 
         </LinearLayout>
 
