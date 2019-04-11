@@ -28,6 +28,13 @@ public class SongsList {
         songs.add(new SongsList("Can't Help Falling In Love", "Elvis Presley", "01"));
         songs.add(new SongsList("Malibu Nights", "LANY", "02"));
         songs.add(new SongsList("How Deep Is Your Love", "Bee Gees", "03"));
+        songs.add(new SongsList("Can't Help Falling In Love", "Elvis Presley", "04"));
+        songs.add(new SongsList("Malibu Nights", "LANY", "05"));
+        songs.add(new SongsList("How Deep Is Your Love", "Bee Gees", "06"));
+        songs.add(new SongsList("Can't Help Falling In Love", "Elvis Presley", "07"));
+        songs.add(new SongsList("Malibu Nights", "LANY", "08"));
+        songs.add(new SongsList("How Deep Is Your Love", "Bee Gees", "09"));
+        songs.add(new SongsList("How Deep Is Your Love", "Bee Gees", "10"));
 
         return songs;
     }
