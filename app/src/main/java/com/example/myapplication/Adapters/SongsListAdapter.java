@@ -19,11 +19,13 @@ public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.View
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView nameTextView;
         public TextView artistTextView;
+        public TextView noTextView;
         public LinearLayout linearLayout;
 
         public ViewHolder(View itemView, final Context context) {
             super(itemView);
 
+            noTextView = itemView.findViewById(R.id.song_number);
             nameTextView = itemView.findViewById(R.id.song_title);
             artistTextView = itemView.findViewById(R.id.song_artist);
             linearLayout =  itemView.findViewById(R.id.ll_layout);
@@ -63,10 +65,12 @@ public class SongsListAdapter extends RecyclerView.Adapter<SongsListAdapter.View
         SongsList songs = mSongsList.get(position);
 
         // Set item views based on your views and data model
+        TextView textView3 = viewHolder.noTextView;
         TextView textView = viewHolder.nameTextView;
         TextView textView2 = viewHolder.artistTextView;
         textView.setText(songs.getName());
         textView2.setText(songs.getArtist());
+        textView3.setText(songs.getNumber());
     }
 
     @Override
