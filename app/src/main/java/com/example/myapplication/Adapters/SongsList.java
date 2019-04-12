@@ -28,13 +28,18 @@ public class SongsList {
         songs.add(new SongsList("Can't Help Falling In Love", "Elvis Presley", "01"));
         songs.add(new SongsList("Malibu Nights", "LANY", "02"));
         songs.add(new SongsList("How Deep Is Your Love", "Bee Gees", "03"));
-        songs.add(new SongsList("All My Life", "EDR", "04"));
-        songs.add(new SongsList("Aray", "EDR", "05"));
-        songs.add(new SongsList("Teach Me How To Doggy", "EDR", "06"));
-        songs.add(new SongsList("I", "Wil", "07"));
-        songs.add(new SongsList("Someday", "EDR", "08"));
-        songs.add(new SongsList("Boom Panes", "EDR", "09"));
-        songs.add(new SongsList("Larawang Kupas", "EDR", "10"));
+        songs.add(new SongsList("Can't Help Falling In Love", "Elvis Presley", "04"));
+        songs.add(new SongsList("Malibu Nights", "LANY", "05"));
+        songs.add(new SongsList("How Deep Is Your Love", "Bee Gees", "06"));
+        songs.add(new SongsList("Can't Help Falling In Love", "Elvis Presley", "07"));
+        songs.add(new SongsList("Malibu Nights", "LANY", "08"));
+        songs.add(new SongsList("How Deep Is Your Love", "Bee Gees", "09"));
+        songs.add(new SongsList("How Deep Is Your Love", "Bee Gees", "10"));
+        songs.add(new SongsList("How Deep Is Your Love", "Bee Gees", "11"));
+        songs.add(new SongsList("How Deep Is Your Love", "Bee Gees", "12"));
+        songs.add(new SongsList("How Deep Is Your Love", "Bee Gees", "13"));
+        songs.add(new SongsList("How Deep Is Your Love", "Bee Gees", "14"));
+        songs.add(new SongsList("How Deep Is Your Love", "Bee Gees", "15"));
 
         return songs;
     }

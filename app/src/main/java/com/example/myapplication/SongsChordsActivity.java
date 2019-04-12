@@ -1,9 +1,12 @@
 package com.example.myapplication;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.github.chrisbanes.photoview.PhotoView;
+
 
 public class SongsChordsActivity extends AppCompatActivity {
 
@@ -18,6 +21,9 @@ public class SongsChordsActivity extends AppCompatActivity {
 
         songName.setText(myIntent.getStringExtra("SongName"));
         artistName.setText(myIntent.getStringExtra("ArtistName"));
+
+        PhotoView photoView = (PhotoView) findViewById(R.id.pv_songimage);
+        photoView.setImageResource(R.drawable.canthelpfallinginlove);
 
     }
 }
