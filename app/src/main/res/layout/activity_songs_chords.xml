@@ -55,9 +55,10 @@
         android:layout_width="33dp"
         android:layout_height="30dp"
         android:layout_alignParentBottom="true"
-        android:adjustViewBounds="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/home"
-        android:gravity="center"/>
+        android:gravity="center" />
 
 
 
