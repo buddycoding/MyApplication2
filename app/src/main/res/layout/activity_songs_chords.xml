@@ -56,6 +56,9 @@
         android:layout_height="30dp"
         android:layout_alignParentBottom="true"
         android:adjustViewBounds="true"
-        android:background="@drawable/home" />
+        android:background="@drawable/home"
+        android:gravity="center"/>
+
+
 
 </RelativeLayout>

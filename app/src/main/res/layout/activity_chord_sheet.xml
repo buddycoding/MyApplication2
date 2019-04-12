@@ -90,12 +90,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/buttonhome"
-            android:layout_width="33dp"
-            android:layout_height="30dp"
-            android:background="@drawable/home" />
-
     </LinearLayout>
 
 </RelativeLayout>
