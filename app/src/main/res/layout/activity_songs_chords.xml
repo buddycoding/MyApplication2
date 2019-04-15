@@ -11,7 +11,7 @@
 
     <TextView
         android:layout_alignParentTop="true"
-        android:id="@+id/textView5"
+        android:id="@+id/songName"
         android:layout_width="match_parent"
         android:layout_height="38dp"
         android:text="Song Name Here"
@@ -25,8 +25,8 @@
         tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_below="@+id/textView5"
+        android:id="@+id/artistName"
+        android:layout_below="@+id/songName"
         android:layout_width="match_parent"
         android:layout_height="22dp"
         android:gravity="center"
@@ -37,17 +37,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/songName"
         tools:ignore="HardcodedText" />
 
-    <ImageView
-        android:id="@+id/songimage"
-        android:layout_below="@+id/textView6"
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/pv_songimage"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/artistName"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/canthelpfallinginlove" />
+        android:scaleType="fitCenter"/>
+
 
     <Button
 
@@ -55,7 +55,11 @@
         android:layout_width="33dp"
         android:layout_height="30dp"
         android:layout_alignParentBottom="true"
-        android:adjustViewBounds="true"
-        android:background="@drawable/home" />
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/home"
+        android:gravity="center" />
+
+
 
 </RelativeLayout>

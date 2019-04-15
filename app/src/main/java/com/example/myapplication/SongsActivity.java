@@ -1,20 +1,24 @@
 package com.example.myapplication;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
+import android.widget.Toast;
+
+import com.example.myapplication.Adapters.SongsList;
+import com.example.myapplication.Adapters.SongsListAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class SongsActivity extends AppCompatActivity {
 
     private Button button1;
+    ArrayList<SongsList> songs = SongsList.createSongList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,45 +29,27 @@ public class SongsActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openMainActivity();
+                onBackPressed();
+                //openMainActivity();
             }
         });
 
-        ListView songList = findViewById(R.id.songList);
-
-        ArrayAdapter<String> songsArrayAdapter;
-        List<String> songs = new ArrayList<>();
-        songs.add("Can't Help Falling In Love");
-        songs.add("2");
-        songs.add("3");
-        songs.add("4");
-        songs.add("5");
-        songs.add("6");
-        songs.add("7");
-        songs.add("8");
-        songs.add("9");
-        songs.add("10");
-
-        songsArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, songs );
-        songList.setAdapter(songsArrayAdapter);
-
-        songList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Get the selected item text from ListView
-                String selectedItem = (String) parent.getItemAtPosition(position);
-
-                openSongsActivity();
-            }
-        });
+        RecyclerView rvContacts = findViewById(R.id.rvContacts);
+        SongsListAdapter adapter = new SongsListAdapter(songs);
+        rvContacts.setAdapter(adapter);
+        rvContacts.setLayoutManager(new LinearLayoutManager(this));
     }
     public void openMainActivity () {
         Intent intent = new Intent (this, MainActivity.class);
         startActivity(intent);
     }
 
-    public void openSongsActivity () {
+    public void userItemClick(int pos) {
+        Toast.makeText(this, "Clicked User : " + songs.get(pos).getName(), Toast.LENGTH_SHORT).show();
+
         Intent intent = new Intent (this, SongsChordsActivity.class);
+        intent.putExtra("SongName", songs.get(pos).getName());
+        intent.putExtra("ArtistName", songs.get(pos).getArtist());
         startActivity(intent);
     }
 }
